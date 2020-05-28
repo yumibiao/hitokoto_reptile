@@ -22,6 +22,7 @@ data=open("data.txt",'w+',encoding='utf-8')
 print(data2)
 #loads:把json转换为dict
 N =10000
+fail_count=0
 for i in range(1,N):
   try:
     #url='https://v1.hitokoto.cn/?c=d&encode=json' #需要爬数据的网址
@@ -54,8 +55,10 @@ for i in range(1,N):
     #print("]",file=data)
     #print("\n",file=data)
   except:
+    fail_count=fail_count+1  
     print("error!")
 
+print('fail:',fail_count)
 #sss="1 1 1\r\n"
 #sss=sss.replace(' ', '').replace('\n', '').replace('\t', '').replace('\r', '').strip()
 #print(sss,file=data)
